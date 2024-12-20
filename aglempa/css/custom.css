@@ -1,0 +1,226 @@
+/* Comments */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;}
+
+a {
+    color: yellowgreen;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;}
+
+a:hover,
+a:focus {
+    color: forestgreen;}
+
+* {box-sizing: border-box;
+        margin: 0;
+        padding: 0;}
+      
+      header {
+          float: left;
+          position: relative;
+          width: 100%;
+          height: 300%;
+          min-height: auto;
+          text-align: center;
+          background-color: black;
+          background-position: center;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          background-size: cover;
+          -o-background-size: cover;
+          padding: 20px;}
+      .column {
+        position: relative;
+        float: left;
+        width: 33.333333%;}
+      
+/* Images*/
+/* Animation: https://www.youtube.com/watch?v=5yl75eM0Y4A&list=LL&index=1*/
+      .image-1 {
+        display: block;
+        padding-bottom:0.0em;
+        width: 33.33333%;
+        border-radius: 5px;
+        border: 5px solid black;
+        animation: fade-up 0.5s;}
+      .image-2 {border-radius: 5px;
+        display: block;
+        width: 33.33333%;
+        border: 5px solid black;
+        animation: fade-up 0.5s;}
+      .image-3 {border-radius: 5px;
+        display: block;
+        width: 33.33333%;
+        border: 5px solid black;
+        height: auto;
+        animation: fade-up 0.5s;}
+
+/*Images fade in Animation: Keyframes for ease-in opacity effect */
+@keyframes fade-up{
+    0% {opacity: 0;
+        transform: translateY(30px) scale(0.9); /* Start from a little lower */}
+    100% {opacity: 1;
+        transform: translateY(0px) scale(1); /* Move to normal position */}}
+@keyframes fade-down{
+    0% {opacity: 0;
+        transform: translateY(-30px) scale(0.9); /* Start from a little lower */}
+    100% {opacity: 1;
+        transform: translateY(0px) scale(1); /* Move to normal position */}}
+
+/* When image comes into the viewport, apply the ease-in animation */
+.visible {
+    animation: easeInImage 1.5s ease-in forwards; /* Ease-in animation */
+}
+
+/* Clearfix (clear floats) */
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;}
+      
+      .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0; 
+        transition: .5s ease-in-out;}
+
+/* Hover White Opacity */ 
+      .column:hover .overlay {
+        opacity: 1;
+        transform: scale(1.1) .5; /* Zoom in effect on image */;}
+
+
+/* Image Text */ 
+.big-text {
+    display: block;
+    color: white;
+    font-size:1em;
+    opacity: 1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;}
+    
+/* Smaller Text */ 
+      .text {
+        display: block;
+        color: white;
+        font-size:50%;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;}
+
+
+
+.section-heading {
+    margin-top: 30px;
+    margin-bottom: 20px;}
+
+.navbar-default {
+    border-color: rgba(34,34,34,.05);
+    background-color: #fff;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    transition: all .35s;
+    animation: fade-down 0.5s;}
+
+.navbar-default .navbar-header .navbar-brand {
+    color: yellowgreen;
+}
+
+.navbar-default .navbar-header .navbar-brand:hover,
+.navbar-default .navbar-header .navbar-brand:focus {
+    color: #eb3812;
+}
+
+.navbar-default .nav > li>a,
+.navbar-default .nav>li>a:focus {
+    color: #000000;
+}
+
+.navbar-default .nav > li>a:hover,
+.navbar-default .nav>li>a:focus:hover {
+    color: #D8B6FF;
+}
+
+.navbar-default .nav > li.active>a,
+.navbar-default .nav>li.active>a:focus {
+    color: yellowgreen!important;
+    background-color: transparent;
+}
+
+.navbar-default .nav > li.active>a:hover,
+.navbar-default .nav>li.active>a:focus:hover {
+    background-color: transparent;
+}
+
+@media(min-width:768px) {
+    .navbar-default {
+        border-color: rgba(255,255,255,.3);
+        background-color: transparent;
+    }
+
+    .navbar-default .navbar-header .navbar-brand {
+        color: rgba(255,255,255,.7);
+        letter-spacing: 0.5em;
+    }
+
+    .navbar-default .navbar-header .navbar-brand:hover,
+    .navbar-default .navbar-header .navbar-brand:focus {
+        color: #fff;
+    }
+
+    .navbar-default .nav > li>a,
+    .navbar-default .nav>li>a:focus {
+        color: #D8B6FF;
+    }
+
+    .navbar-default .nav > li>a:hover,
+    .navbar-default .nav>li>a:focus:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    .navbar-default.affix {
+        border-color: #fff;
+        background-color: #fff;
+        text-decoration: underline;
+        box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.1);
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand {
+        letter-spacing: 0;
+        color: #D8B6FF;
+    }
+
+    .navbar-default.affix .navbar-header .navbar-brand:hover,
+    .navbar-default.affix .navbar-header .navbar-brand:focus {
+        color: #eb3812;
+    }
+
+    .navbar-default.affix .nav > li>a,
+    .navbar-default.affix .nav>li>a:focus {
+        color: #222;
+    }
+
+    .navbar-default.affix .nav > li>a:hover,
+    .navbar-default.affix .nav>li>a:focus:hover {
+        color: yellowgreen;
+    }
+}
